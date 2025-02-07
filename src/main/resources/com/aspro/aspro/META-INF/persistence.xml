@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="asproPU">
+        <!-- O provider JPA que o Hibernate usa -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Aqui você adiciona as classes que representam suas entidades -->
+        <class>com.aspro.aspro.model.entities.Address</class>
+        <class>com.aspro.aspro.model.entities.Customer</class>
+        <class>com.aspro.aspro.model.entities.Material</class>
+        <class>com.aspro.aspro.model.entities.Order</class>
+        <class>com.aspro.aspro.model.entities.OrderMaterial</class>
+        <class>com.aspro.aspro.model.entities.Transaction</class>
+        <class>com.aspro.aspro.model.entities.Vehicle</class>
+        <!-- Adicione as outras entidades aqui -->
+
+        <properties>
+            <!-- Dialeto do Hibernate para MySQL -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+
+            <!-- Atualiza o banco de dados automaticamente -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- Exibe as consultas SQL no console -->
+            <property name="hibernate.show_sql" value="true"/>
+
+            <!-- Formata as consultas SQL -->
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!-- Driver do banco de dados -->
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+
+            <!-- URL de conexão com o banco de dados -->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/aspro"/>
+
+            <!-- Nome de usuário para o banco de dados -->
+            <property name="hibernate.connection.username" value="root"/>
+
+            <!-- Senha para o banco de dados -->
+            <property name="hibernate.connection.password" value="your_password"/>
+
+            <!-- Usar pool de conexões -->
+            <property name="hibernate.c3p0.min_size" value="5"/>
+            <property name="hibernate.c3p0.max_size" value="20"/>
+            <property name="hibernate.c3p0.timeout" value="300"/>
+            <property name="hibernate.c3p0.max_statements" value="50"/>
+            <property name="hibernate.c3p0.idle_test_period" value="3000"/>
+        </properties>
+    </persistence-unit>
+</persistence>

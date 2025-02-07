@@ -51,3 +51,4 @@ CREATE TABLE orders_materials (
   FOREIGN KEY (order_id) REFERENCES orders (order_id),
   FOREIGN KEY (material_id) REFERENCES materials (material_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+

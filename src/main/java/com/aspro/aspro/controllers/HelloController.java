@@ -1,4 +1,4 @@
-package com.aspro.aspro;
+package com.aspro.aspro.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
