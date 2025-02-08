@@ -15,7 +15,7 @@ CREATE TABLE address (
   zip_code BIGINT NOT NULL,
   street VARCHAR(45) NOT NULL,
   number SMALLINT DEFAULT NULL,
-  neighborhood VARCHAR(45) NOT NULL,
+  district VARCHAR(45) NOT NULL,
   city VARCHAR(25) NOT NULL,
   complement VARCHAR(45) DEFAULT NULL,
   customer_id_FK INT NOT NULL,

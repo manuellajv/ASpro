@@ -7,7 +7,7 @@ INSERT INTO customers (name, cpf_cnpj, phone, email) VALUES
 ('Carlos Souza', '321.654.987-00', 31987654321, 'carlos@email.com');
 
 -- Inserindo endereços
-INSERT INTO address (zip_code, street, number, neighborhood, city, complement, customer_id_FK) VALUES
+INSERT INTO address (zip_code, street, number, district, city, complement, customer_id_FK) VALUES
 (12345678, 'Rua das Flores', 100, 'Centro', 'São Paulo', 'Apto 101', 1),
 (87654321, 'Av. Brasil', 200, 'Jardins', 'Rio de Janeiro', NULL, 2),
 (56781234, 'Rua 7 de Setembro', 300, 'Bela Vista', 'Belo Horizonte', 'Bloco B', 3);
