@@ -16,11 +16,11 @@ public class Address {
     @Column(name = "street", nullable = false, length = 45)
     private String street;
 
-    @Column(name = "number")
-    private Short number;
+    @Column(name = "addrNumber")
+    private Short addrNumber;
 
-    @Column(name = "neighborhood", nullable = false, length = 45)
-    private String neighborhood;
+    @Column(name = "district", nullable = false, length = 45)
+    private String district;
 
     @Column(name = "city", nullable = false, length = 25)
     private String city;
@@ -64,20 +64,20 @@ public class Address {
         this.city = city;
     }
 
-    public String getNeighborhood() {
-        return neighborhood;
+    public String getDistrict() {
+        return district;
     }
 
-    public void setNeighborhood(String neighborhood) {
-        this.neighborhood = neighborhood;
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
-    public Short getNumber() {
-        return number;
+    public Short getAddrNumber() {
+        return addrNumber;
     }
 
-    public void setNumber(Short number) {
-        this.number = number;
+    public void setAddrNumber(Short addrNumber) {
+        this.addrNumber = addrNumber;
     }
 
     public String getStreet() {

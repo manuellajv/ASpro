@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transaction_id")
+    @Column(name = "trs_id")
     private Integer transactionId;
 
-    @Column(name = "type", nullable = false)
+    @Column(name = "trs_type", nullable = false)
     private Character type;
 
     @Column(name = "material_quantity", nullable = false)

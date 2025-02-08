@@ -11,10 +11,10 @@ public class Material {
     @Column(name = "material_id")
     private Integer materialId;
 
-    @Column(name = "description", nullable = false, length = 150)
-    private String description;
+    @Column(name = "material_desc", nullable = false, length = 150)
+    private String material_desc;
 
-    @Column(name = "type", nullable = false)
+    @Column(name = "material_type", nullable = false)
     private Character type;
 
     @Column(name = "unit", nullable = false)
@@ -34,12 +34,12 @@ public class Material {
         this.materialId = materialId;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMaterial_desc() {
+        return material_desc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMaterial_desc(String material_desc) {
+        this.material_desc = material_desc;
     }
 
     public Character getType() {

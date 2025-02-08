@@ -10,8 +10,8 @@ public class Customer {
     @Column(name = "customer_id")
     private Integer customerId;
 
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;
+    @Column(name = "customer_name", nullable = false, length = 100)
+    private String customerName;
 
     @Column(name = "cpf_cnpj", nullable = false, length = 18)
     private String cpfCnpj;
@@ -31,12 +31,12 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public String getName(){
-        return name;
+    public String getCustomerName(){
+        return customerName;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setCustomerName(String customerName){
+        this.customerName = customerName;
     }
 
     public String getCpfCnpj(){

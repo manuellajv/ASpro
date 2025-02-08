@@ -3,7 +3,7 @@ USE aspro;
 
 CREATE TABLE customers (
   customer_id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(100) NOT NULL,
+  customer_name VARCHAR(100) NOT NULL,
   cpf_cnpj VARCHAR(18) NOT NULL UNIQUE,
   phone BIGINT NOT NULL,
   email VARCHAR(50) DEFAULT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE address (
   address_id INT NOT NULL AUTO_INCREMENT,
   zip_code BIGINT NOT NULL,
   street VARCHAR(45) NOT NULL,
-  number SMALLINT DEFAULT NULL,
+  addrNumber SMALLINT DEFAULT NULL,
   district VARCHAR(45) NOT NULL,
   city VARCHAR(25) NOT NULL,
   complement VARCHAR(45) DEFAULT NULL,
@@ -25,8 +25,8 @@ CREATE TABLE address (
 
 CREATE TABLE materials (
   material_id INT NOT NULL AUTO_INCREMENT,
-  description VARCHAR(150) NOT NULL,
-  type ENUM('S','P','U') NOT NULL COMMENT 'S = Service, P = Part, U = Consumable',
+  material_desc VARCHAR(150) NOT NULL,
+  material_type ENUM('S','P','U') NOT NULL COMMENT 'S = Service, P = Part, U = Consumable',
   unit CHAR(2) NOT NULL,
   purchase_price DECIMAL(10,2) NOT NULL,
   sale_price DECIMAL(10,2) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE orders (
   order_id INT NOT NULL AUTO_INCREMENT,
   vehicle_id_FK INT NOT NULL,
   customer_id_FK INT NOT NULL,
-  status ENUM('P','A','R') NOT NULL COMMENT 'P = Pending, A = Approved, R = Rejected',
+  ord_status ENUM('P','A','R') NOT NULL COMMENT 'P = Pending, A = Approved, R = Rejected',
   total_price DECIMAL(10,2) NOT NULL,
   creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (order_id),

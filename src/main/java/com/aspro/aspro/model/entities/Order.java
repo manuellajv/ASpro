@@ -13,8 +13,8 @@ public class Order {
     @Column(name = "order_id")
     private Integer orderId;
 
-    @Column(name = "status", nullable = false)
-    private Character status;
+    @Column(name = "ord_status", nullable = false)
+    private Character orderStatus;
 
     @Column(name = "total_price", nullable = false)
     private BigDecimal totalPrice;
@@ -38,12 +38,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public Character getStatus() {
-        return status;
+    public Character getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(Character status) {
-        this.status = status;
+    public void setOrderStatus(Character orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     public BigDecimal getTotalPrice() {
