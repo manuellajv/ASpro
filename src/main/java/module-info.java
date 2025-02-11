@@ -3,6 +3,7 @@ module com.aspro.aspro {
     requires javafx.fxml;
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
+    requires jdk.compiler;
 
 
     opens com.aspro.aspro to javafx.fxml;
