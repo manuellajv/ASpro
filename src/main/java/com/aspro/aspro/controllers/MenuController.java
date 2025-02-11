@@ -1,6 +1,5 @@
 package com.aspro.aspro.controllers;
 
-import com.sun.source.tree.Tree;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
@@ -16,27 +15,30 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
-
+        createTreeView();
+    }
+    
+    private void createTreeView(){
         TreeItem<String> customers = new TreeItem<>("Clientes");
         TreeItem<String> materials = new TreeItem<>("Materiais");
         TreeItem<String> orders = new TreeItem<>("Orçamentos");
         TreeItem<String> vehicles = new TreeItem<>("Veículos");
 
-        TreeItem<String> registerCustomer = new TreeItem<>("Cadastrar");
-        TreeItem<String> modifyCustomer = new TreeItem<>("Modificar");
-        TreeItem<String> viewCustomer = new TreeItem<>("Visualizar");
+        TreeItem<String> registerCustomer = new TreeItem<>("Cadastrar Cliente");
+        TreeItem<String> modifyCustomer = new TreeItem<>("Modificar Cliente");
+        TreeItem<String> viewCustomer = new TreeItem<>("Visualizar Cliente");
 
-        TreeItem<String> registerMaterial = new TreeItem<>("Cadastrar");
-        TreeItem<String> modifyMaterial = new TreeItem<>("Modificar");
-        TreeItem<String> viewMaterial = new TreeItem<>("Visualizar");
+        TreeItem<String> registerMaterial = new TreeItem<>("Cadastrar Material");
+        TreeItem<String> modifyMaterial = new TreeItem<>("Modificar Material");
+        TreeItem<String> viewMaterial = new TreeItem<>("Visualizar Material");
 
-        TreeItem<String> registerOrder = new TreeItem<>("Cadastrar");
-        TreeItem<String> modifyOrder = new TreeItem<>("Modificar");
-        TreeItem<String> viewOrder = new TreeItem<>("Visualizar");
+        TreeItem<String> registerOrder = new TreeItem<>("Novo Orçamento");
+        TreeItem<String> modifyOrder = new TreeItem<>("Modificar Orçamento");
+        TreeItem<String> viewOrder = new TreeItem<>("Visualizar Orçamento");
 
-        TreeItem<String> registerVehicle = new TreeItem<>("Cadastrar");
-        TreeItem<String> modifyVehicle = new TreeItem<>("Modificar");
-        TreeItem<String> viewVehicle = new TreeItem<>("Visualizar");
+        TreeItem<String> registerVehicle = new TreeItem<>("Cadastrar Veiculo");
+        TreeItem<String> modifyVehicle = new TreeItem<>("Modificar Veiculo");
+        TreeItem<String> viewVehicle = new TreeItem<>("Visualizar Veiculo");
 
         customers.getChildren().addAll(registerCustomer, modifyCustomer, viewCustomer);
         materials.getChildren().addAll(registerMaterial, modifyMaterial, viewMaterial);
@@ -49,7 +51,38 @@ public class MenuController implements Initializable {
         menuTreeView.setRoot(root);
         menuTreeView.setShowRoot(false);
 
+        menuTreeView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue != null){
+                updateScreen(newValue);
+            }
+        });
     }
+    private void updateScreen(TreeItem<String> item) {
+        var itemValue = item.getValue().toLowerCase();
+        switch (itemValue){
+            case "cadastrar cliente":
+                System.out.println("cadastrar cliente");
+                break;
+            case "modificar cliente":
+                System.out.println("modificar cliente");
+                break;
+            case "visualizar cliente":
+                System.out.println("visualizar cliente");
+                break;
+            case "cadastrar material":
+                System.out.println("cadastrar material");
+                break;
+            case "modificar material":
+                System.out.println("modificar material");
+                break;
+            case "visualizar material":
+                System.out.println("visualizar material");
+                break;
+        }
+
+    }
+
+
 
     public void selectItem(){
 
