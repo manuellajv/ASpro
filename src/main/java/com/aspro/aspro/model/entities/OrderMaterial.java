@@ -15,6 +15,8 @@ public class OrderMaterial {
     @JoinColumn(name = "material_id", referencedColumnName = "material_id")
     private Material materialIdFK;
 
+
+
     public Order getOrderIdFK() {
         return orderIdFK;
     }
