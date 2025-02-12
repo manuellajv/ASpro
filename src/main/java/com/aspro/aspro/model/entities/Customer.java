@@ -2,6 +2,9 @@ package com.aspro.aspro.model.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "customers")
 public class Customer {
@@ -22,6 +25,8 @@ public class Customer {
     @Column(name = "email", length = 50)
     private String email;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Vehicle> vehicles = new ArrayList<>();
 
     public Integer getCustomerId() {
         return customerId;

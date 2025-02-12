@@ -18,6 +18,10 @@ public class Vehicle {
 
     @Column(name = "make_model", nullable = false, length = 100)
     private String makeModel;
+    
+    @ManyToOne
+    @JoinColumn(name = "custoemr_id_FK")
+    private Customer customer;
 
     public Integer getVehicleId() {
         return vehicleId;

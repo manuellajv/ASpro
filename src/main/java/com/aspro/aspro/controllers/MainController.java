@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuController implements Initializable {
+public class MainController implements Initializable {
 
     @FXML
     private TreeView<String> menuTreeView;
@@ -66,7 +66,7 @@ public class MenuController implements Initializable {
         var itemValue = item.getValue().toLowerCase();
         switch (itemValue){
             case "cadastrar cliente":
-                loadView("teste.fxml");
+                loadView("Customer.fxml");
                 break;
             case "modificar cliente":
                 System.out.println("modificar cliente");

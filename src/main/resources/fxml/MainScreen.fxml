@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" style="-fx-background-color: #3D3D61;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aspro.aspro.controllers.MainController">
+   <children>
+      <AnchorPane prefHeight="128.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="78.0" layoutY="44.0" text="ASpro" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="31.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER_RIGHT" layoutX="1058.4" layoutY="32.6" prefHeight="96.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="640.2" AnchorPane.leftAnchor="1058.4" AnchorPane.rightAnchor="23.200000000000045" AnchorPane.topAnchor="32.6">
+               <children>
+                  <Label text="Administrador" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" text="Configurações" />
+                  <AnchorPane prefHeight="96.0" prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#sysExit" text="Sair" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="16.0" right="16.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="192.0" prefHeight="672.0" prefWidth="264.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="30.0">
+               <children>
+                  <TreeView fx:id="menuTreeView" prefHeight="621.0" prefWidth="232.0" showRoot="false" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentPane" layoutX="306.0" layoutY="132.8" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="130.0" />
+   </children>
+</AnchorPane>

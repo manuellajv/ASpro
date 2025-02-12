@@ -23,12 +23,6 @@ public class JpaUtil {
         return emf.createEntityManager();
     }
 
-    public static void closeEntityManager(EntityManager em) {
-        if (em != null) {
-            em.close();
-        }
-    }
-
     public static void closeEntityManagerFactory() {
             emf.close();
     }
