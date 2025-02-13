@@ -65,24 +65,18 @@ public class MainController implements Initializable {
     private void updateScreen(TreeItem<String> item) {
         var itemValue = item.getValue().toLowerCase();
         switch (itemValue){
-            case "cadastrar cliente":
-                loadView("Customer.fxml");
-                break;
-            case "modificar cliente":
-                System.out.println("modificar cliente");
-                break;
-            case "visualizar cliente":
-                System.out.println("visualizar cliente");
-                break;
-            case "cadastrar material":
-                System.out.println("cadastrar material");
-                break;
-            case "modificar material":
-                System.out.println("modificar material");
-                break;
-            case "visualizar material":
-                System.out.println("visualizar material");
-                break;
+            case "cadastrar cliente" -> loadView("Customer.fxml");
+            case "modificar cliente" -> System.out.println("modificar cliente");
+            case "visualizar cliente" -> System.out.println("visualizar cliente");
+            case "cadastrar material" -> System.out.println("cadastrar material");
+            case "modificar material" -> System.out.println("modificar material");
+            case "visualizar material" -> System.out.println("visualizar material");
+            case "novo orçamento" -> System.out.println("novo orçamento");
+            case "modificar orçamento" -> System.out.println("modificar orçamento");
+            case "visualizar orçamento" -> System.out.println("visualizar orçamento");
+            case "cadastrar veículo" -> System.out.println("cadastrar veículo");
+            case "modificar veículo" -> System.out.println("modificar veículo");
+            case "visualizar veículo" -> System.out.println("visualizar veículo");
         }
 
     }
