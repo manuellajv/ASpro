@@ -6,18 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1024.0" style="-fx-background-color: #A1A1A1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aspro.aspro.controllers.TesteController">
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" style="-fx-background-color: #A1A1A1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aspro.aspro.controllers.SaveCustomerController">
    <children>
       <Label layoutX="66.0" layoutY="63.0" text="Cadastrar Cliente">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <TextField layoutX="169.0" layoutY="206.0" prefHeight="45.0" prefWidth="274.0" />
-      <TextField layoutX="581.0" layoutY="206.0" prefHeight="45.0" prefWidth="274.0" />
-      <TextField layoutX="169.0" layoutY="327.0" prefHeight="45.0" prefWidth="274.0" />
-      <TextField layoutX="581.0" layoutY="327.0" prefHeight="45.0" prefWidth="274.0" />
-      <Button layoutX="443.0" layoutY="467.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="138.0" text="Cadastrar" />
+      <TextField fx:id="nameTextField" layoutX="169.0" layoutY="206.0" prefHeight="45.0" prefWidth="274.0" />
+      <TextField fx:id="cpfCnpjTextField" layoutX="581.0" layoutY="206.0" prefHeight="45.0" prefWidth="274.0" />
+      <TextField fx:id="emailTextField" layoutX="169.0" layoutY="327.0" prefHeight="45.0" prefWidth="274.0" />
+      <TextField fx:id="phoneTextField" layoutX="581.0" layoutY="327.0" prefHeight="45.0" prefWidth="274.0" />
+      <Button layoutX="443.0" layoutY="467.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="45.0" prefWidth="138.0" text="Cadastrar" />
       <Label layoutX="169.0" layoutY="291.0" text="E-mail">
          <font>
             <Font size="25.0" />
