@@ -21,8 +21,6 @@ public class CustomerDAO {
         } catch (RuntimeException e) {
             tx.rollback();
             throw new RuntimeException(e);
-        } finally {
-            em.close();
         }
     }
 

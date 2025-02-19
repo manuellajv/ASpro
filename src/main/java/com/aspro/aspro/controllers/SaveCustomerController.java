@@ -4,6 +4,8 @@ import com.aspro.aspro.model.dao.CustomerDAO;
 import com.aspro.aspro.model.services.CustomerService;
 import com.aspro.aspro.util.Alerts;
 import com.aspro.aspro.util.JpaUtil;
+import com.aspro.aspro.util.NullValidator;
+import com.aspro.aspro.util.ValueParser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -30,32 +32,35 @@ public class SaveCustomerController  {
         ));
     }
 
+    private void clearFields (){
+        nameTextField.clear();
+        cpfCnpjTextField.clear();
+        phoneTextField.clear();
+        emailTextField.clear();
+    }
+
     @FXML
     private void saveCustomer(){
         try{
+
+            TextField[] fields = {nameTextField, cpfCnpjTextField, phoneTextField};
+
+            if(NullValidator.validateNull(fields)){return;}
+
             String customerName = nameTextField.getText();
             String cpfCnpj = cpfCnpjTextField.getText();
-            String phoneText = phoneTextField.getText();
+            Long phoneText = ValueParser.parseLong(phoneTextField.getText());
             String email = emailTextField.getText();
 
-            if (customerName.isEmpty() || cpfCnpj.isEmpty() || phoneText.isEmpty()){
-                Alerts.showAlerts("Erro!", "Campos obrigatórios.", "Todos os campos devem ser preenchidos.", Alert.AlertType.ERROR);
-                return;
-            }
+            service.saveCustomer(customerName, cpfCnpj, phoneText, email);
 
-            Long phone = Long.parseLong(String.valueOf(phoneText));
+            Alerts.showAlerts("Sucesso", "Cadastro realizado.", "Cliente cadastrado com sucesso!", Alert.AlertType.INFORMATION);
 
-            service.saveCustomer(customerName, cpfCnpj, phone, email);
-
-            Alerts.showAlerts("Sucesso!", "Cadastro realizado.", "Cliente cadastrado com sucesso!", Alert.AlertType.INFORMATION);
-
-            nameTextField.clear();
-            cpfCnpjTextField.clear();
-            phoneTextField.clear();
-            emailTextField.clear();
+            clearFields();
 
         } catch (Exception e){
-           Alerts.showAlerts("Erro!", "Erro ao cadastrar cliente.", "Houve um erro ao cadastrar o cliente." + e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
+//           Alerts.showAlerts("Erro", "Erro ao cadastrar cliente.", "Houve um erro ao cadastrar o cliente." + e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
