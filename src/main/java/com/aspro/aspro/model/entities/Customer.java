@@ -13,7 +13,7 @@ public class Customer {
     @Column(name = "customer_id")
     private Integer customerId;
 
-    @Column(name = "customer_name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false, length = 100)
     private String customerName;
 
     @Column(name = "cpf_cnpj", nullable = false, length = 18)
@@ -27,6 +27,9 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Vehicle> vehicles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Address> address = new ArrayList<>();
 
     public Integer getCustomerId() {
         return customerId;
@@ -66,6 +69,14 @@ public class Customer {
 
     public void setEmail(String email){
         this.email = email;
+    }
+
+    public List<Address> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<Address> address) {
+        this.address = address;
     }
 }
 

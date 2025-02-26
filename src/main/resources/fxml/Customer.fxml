@@ -12,10 +12,10 @@
 <AnchorPane prefHeight="728.0" prefWidth="1024.0" style="-fx-background-color: #A1A1A1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aspro.aspro.controllers.SaveCustomerController">
    <children>
       <TabPane prefHeight="728.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Cliente">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="480.0">
+         <tabs>
+            <Tab text="Cliente">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="480.0">
                      <children>
                         <Label layoutX="63.0" layoutY="59.0" text="Cadastrar Cliente" AnchorPane.bottomAnchor="582.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="660.0" AnchorPane.topAnchor="59.0">
                            <font>
@@ -65,11 +65,11 @@
                         <TextField fx:id="cpfCnpjTextField" layoutX="551.0" layoutY="202.0" prefHeight="45.0" prefWidth="274.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="202.0" />
                      </children>
                   </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Endereço">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               </content>
+            </Tab>
+            <Tab text="Endereço">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label text="Cadastrar Endereço" AnchorPane.bottomAnchor="582.0" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="59.0">
                            <font>
@@ -132,9 +132,9 @@
                         </Label>
                      </children>
                   </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
+               </content>
+            </Tab>
+         </tabs>
       </TabPane>
    </children>
 </AnchorPane>

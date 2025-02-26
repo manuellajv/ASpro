@@ -30,7 +30,8 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "customer_id_FK", nullable = false)
-    private Customer customerId;
+    private Customer customer;
+
 
     public Integer getAddressId() {
         return addressId;
@@ -41,11 +42,11 @@ public class Address {
     }
 
     public Customer getCustomerId() {
-        return customerId;
+        return customer;
     }
 
-    public void setCustomerId(Customer customerId) {
-        this.customerId = customerId;
+    public void setCustomerId(Customer customer) {
+        this.customer = customer;
     }
 
     public String getComplement() {

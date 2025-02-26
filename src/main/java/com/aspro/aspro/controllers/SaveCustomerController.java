@@ -1,5 +1,6 @@
 package com.aspro.aspro.controllers;
 
+import com.aspro.aspro.model.dao.AddressDAO;
 import com.aspro.aspro.model.dao.CustomerDAO;
 import com.aspro.aspro.model.services.CustomerService;
 import com.aspro.aspro.util.Alerts;
@@ -26,10 +27,28 @@ public class SaveCustomerController  {
     @FXML
     private TextField emailTextField;
 
+    @FXML
+    private TextField streetTextField;
+
+    @FXML
+    private TextField addrNumberTextField;
+
+    @FXML
+    private TextField complementTextField;
+
+    @FXML
+    private TextField districtTextField;
+
+    @FXML
+    private TextField zipCodeTextField;
+
+    @FXML
+    private TextField cityTextField;
+
+
     public SaveCustomerController(){
         this.service = new CustomerService(new CustomerDAO(
-                JpaUtil.getEntityManager()
-        ));
+                JpaUtil.getEntityManager()), new AddressDAO(JpaUtil.getEntityManager()));
     }
 
     private void clearFields (){
@@ -37,22 +56,38 @@ public class SaveCustomerController  {
         cpfCnpjTextField.clear();
         phoneTextField.clear();
         emailTextField.clear();
+        streetTextField.clear();
+        addrNumberTextField.clear();
+        complementTextField.clear();
+        districtTextField.clear();
+        zipCodeTextField.clear();
+        cityTextField.clear();
     }
 
     @FXML
-    private void saveCustomer(){
+    public void saveCustomer(){
         try{
 
-            TextField[] fields = {nameTextField, cpfCnpjTextField, phoneTextField};
+            TextField[] fields = {nameTextField, cpfCnpjTextField, phoneTextField, streetTextField, addrNumberTextField, districtTextField, zipCodeTextField, cityTextField};
 
-            if(NullValidator.validateNull(fields)){return;}
+            if (NullValidator.validateNull(new TextField[]{nameTextField, cpfCnpjTextField, phoneTextField, emailTextField, streetTextField, addrNumberTextField, districtTextField, cityTextField, zipCodeTextField})) {
+                Alerts.showAlerts("Erro", "Campos obrigatórios não preenchidos", "Preencha todos os campos antes de cadastrar!", Alert.AlertType.ERROR);
+                return;
+            }
 
             String customerName = nameTextField.getText();
             String cpfCnpj = cpfCnpjTextField.getText();
             Long phoneText = ValueParser.parseLong(phoneTextField.getText());
             String email = emailTextField.getText();
 
-            service.saveCustomer(customerName, cpfCnpj, phoneText, email);
+            String street = streetTextField.getText();
+            Short addrNumber = ValueParser.parseShort(addrNumberTextField.getText());
+            String district = districtTextField.getText();
+            Long zipCode = ValueParser.parseLong(zipCodeTextField.getText());
+            String city = cityTextField.getText();
+            String complement = complementTextField.getText();
+
+            service.saveCustomer(customerName, cpfCnpj, phoneText, email, zipCode, street, addrNumber, district, city, complement);
 
             Alerts.showAlerts("Sucesso", "Cadastro realizado.", "Cliente cadastrado com sucesso!", Alert.AlertType.INFORMATION);
 

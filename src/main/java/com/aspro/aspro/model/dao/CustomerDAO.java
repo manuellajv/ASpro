@@ -2,6 +2,7 @@ package com.aspro.aspro.model.dao;
 
 import com.aspro.aspro.model.entities.Customer;
 import jakarta.persistence.EntityManager;
+import javafx.fxml.FXML;
 
 
 public class CustomerDAO {
@@ -12,7 +13,9 @@ public class CustomerDAO {
         this.em = em;
     }
 
+
     public void save(Customer customer){
+
         var tx = em.getTransaction();
         try{
             tx.begin();
